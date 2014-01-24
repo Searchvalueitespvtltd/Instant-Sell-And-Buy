@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController">
+            <connections>
+                <outlet property="cityTxtPassword" destination="h8Q-ue-OHm" id="GyW-kg-gV7"/>
+                <outlet property="confirmEmailTxtField" destination="eWu-hz-g1J" id="xAh-bT-vOc"/>
+                <outlet property="confirmpasswordTxtField" destination="nMM-ZE-L8a" id="CeX-rQ-xhN"/>
+                <outlet property="countryTxtField" destination="zgx-4I-boO" id="Jj6-47-SQd"/>
+                <outlet property="emailAddressTxtField" destination="WWK-TO-9rg" id="A4x-w3-GCw"/>
+                <outlet property="firstNameTxtField" destination="Hbg-F5-VjO" id="Rwr-MP-Ofz"/>
+                <outlet property="lastNameTxtField" destination="Lcb-9t-hC4" id="ODk-XY-vvf"/>
+                <outlet property="passwordTxtField" destination="040-Wz-Huq" id="iVg-7q-50v"/>
+                <outlet property="phoneNoPrefixTxtField" destination="0gs-lm-75R" id="4WD-kc-ovr"/>
+                <outlet property="phoneNoTxtField" destination="wuj-Ap-YBn" id="4QS-ds-j9g"/>
+                <outlet property="pickerContainer" destination="213" id="3mq-wi-kO4"/>
+                <outlet property="pickerView" destination="187" id="200"/>
+                <outlet property="scrollView" destination="MV4-To-ZVb" id="5V4-vU-nb8"/>
+                <outlet property="stateTxtField" destination="1P4-AG-ABE" id="3Hc-Vd-FrZ"/>
+                <outlet property="txtPayPalAccountId" destination="60t-vn-lv2" id="tmM-iX-I5d"/>
+                <outlet property="userNameTxtField" destination="FTb-22-LM9" id="ooJ-UT-8BY"/>
+                <outlet property="view" destination="1" id="3"/>
+                <outlet property="zipCodeTxtField" destination="dd5-FR-amz" id="k8j-Y8-igp"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background.png" id="4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="MV4-To-ZVb">
+                    <rect key="frame" x="0.0" y="-166" width="320" height="812"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qCd-BN-jfa">
+                            <rect key="frame" x="0.0" y="-47" width="320" height="845"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="stopEditing:" destination="-1" eventType="touchUpInside" id="FMh-eH-fIm"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" image="textfieldRegistrationSmall.png" id="uwk-ll-fwi">
+                            <rect key="frame" x="25" y="21" width="177" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" id="Hbg-F5-VjO">
+                            <rect key="frame" x="31" y="22" width="168" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="c4p-kK-q3I"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" image="textfieldRegistrationSmall.png" id="eXh-wD-w37">
+                            <rect key="frame" x="25" y="65" width="177" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" id="Lcb-9t-hC4">
+                            <rect key="frame" x="31" y="66" width="168" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="pS9-8r-Li8"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfieldRegistrationSmall.png" id="aAw-9U-xKX">
+                            <rect key="frame" x="25" y="109" width="177" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" id="FTb-22-LM9">
+                            <rect key="frame" x="32" y="110" width="167" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="qxd-fI-j2Q"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="1f4-3S-Pa0">
+                            <rect key="frame" x="24" y="169" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" id="040-Wz-Huq">
+                            <rect key="frame" x="31" y="170" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="IwN-Pa-f7x"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="KgI-g4-3YZ">
+                            <rect key="frame" x="24" y="213" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="17" id="nMM-ZE-L8a">
+                            <rect key="frame" x="31" y="214" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="vjh-NF-Ga7"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="0oT-Uq-ml1">
+                            <rect key="frame" x="24" y="257" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Home Address" minimumFontSize="17" id="nKm-S2-fjg">
+                            <rect key="frame" x="31" y="258" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="GVw-Vr-9ZS"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="XUL-tu-wih">
+                            <rect key="frame" x="24" y="301" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="107" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" id="h8Q-ue-OHm">
+                            <rect key="frame" x="31" y="302" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="8Df-L2-EOT"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="9vI-op-Bjr">
+                            <rect key="frame" x="24" y="393" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="109" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip Code" minimumFontSize="17" id="dd5-FR-amz">
+                            <rect key="frame" x="31" y="394" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="K9B-u2-CES"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="GgI-v6-t1y">
+                            <rect key="frame" x="24" y="526" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="113" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" id="WWK-TO-9rg">
+                            <rect key="frame" x="31" y="527" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="gMw-ft-5Fr"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="vh5-q9-G17">
+                            <rect key="frame" x="24" y="570" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Email Address" minimumFontSize="17" id="eWu-hz-g1J">
+                            <rect key="frame" x="31" y="571" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="mre-1S-Von"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="rsf-IX-nrc">
+                            <rect key="frame" x="25" y="438" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="110" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" minimumFontSize="17" id="1P4-AG-ABE">
+                            <rect key="frame" x="32" y="439" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="FDW-sx-Wbi"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="selectMenu.png" id="a6O-aN-FQD">
+                            <rect key="frame" x="24" y="350" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="108" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" minimumFontSize="17" id="zgx-4I-boO">
+                            <rect key="frame" x="31" y="351" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="zaY-IO-jbH"/>
+                            </connections>
+                        </textField>
+                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IZh-To-XQq">
+                            <rect key="frame" x="25" y="350" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="showCountryPicker:" destination="-1" eventType="touchUpInside" id="pVm-Yy-zM3"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="textfield.png" id="0ya-as-Z81">
+                            <rect key="frame" x="24" y="482" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="+1" minimumFontSize="17" id="0gs-lm-75R">
+                            <rect key="frame" x="31" y="483" width="42" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="eUL-nj-3HR"/>
+                            </connections>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" tag="112" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Primary Phone" minimumFontSize="17" id="wuj-Ap-YBn">
+                            <rect key="frame" x="84" y="483" width="209" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Grx-ba-AQn"/>
+                            </connections>
+                        </textField>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="separator.png" id="kpy-eF-qyN">
+                            <rect key="frame" x="77" y="481" width="3" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Use letters or number, but not ( ) &lt; > &amp; @" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wcJ-R5-gWj">
+                            <rect key="frame" x="29" y="144" width="255" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I Agree to the Terms and Conditions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="48q-2U-e8Z">
+                            <rect key="frame" x="57" y="693" width="227" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="13"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dFR-10-DeW">
+                            <rect key="frame" x="59" y="692" width="191" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="termAndConditionClick:" destination="-1" eventType="touchUpInside" id="RXM-mW-vzK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c7Q-cX-tNp">
+                            <rect key="frame" x="21" y="738" width="275" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="15"/>
+                            <state key="normal" title="Sign Up" backgroundImage="buttonBg.png">
+                                <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="signUpClick:" destination="-1" eventType="touchUpInside" id="vr0-nf-uop"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Lpa-Bd-QDP">
+                            <rect key="frame" x="6" y="692" width="46" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal" image="checkboxOff.png">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="selected" image="checkboxOn.png"/>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="checkBoxClick:" destination="-1" eventType="touchUpInside" id="GyM-H2-Ve8"/>
+                            </connections>
+                        </button>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="userPictureBox.png" id="j0b-aK-gBl">
+                            <rect key="frame" x="215" y="21" width="81" height="81"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Upload Picture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NLT-ix-iNr">
+                            <rect key="frame" x="215" y="105" width="94" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="userIcon.png" id="YL8-v1-B2e">
+                            <rect key="frame" x="225" y="28" width="63" height="68"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bVO-wh-jbu">
+                            <rect key="frame" x="215" y="21" width="81" height="81"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                            <state key="normal">
+                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="uploadPictureClick:" destination="-1" eventType="touchUpInside" id="x4N-y3-scZ"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="yWd-b4-woA">
+                            <rect key="frame" x="216" y="23" width="77" height="77"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="textfield.png" id="CCM-Xw-VNa">
+                            <rect key="frame" x="24" y="616" width="272" height="31"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </imageView>
+                        <textField opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PayPal Account" minimumFontSize="17" id="60t-vn-lv2">
+                            <rect key="frame" x="31" y="617" width="263" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                        </textField>
+                        <view contentMode="scaleToFill" id="213">
+                            <rect key="frame" x="2" y="360" width="320" height="258"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <pickerView contentMode="scaleToFill" id="187">
+                                    <rect key="frame" x="-14" y="60" width="320" height="216"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="217"/>
+                                        <outlet property="delegate" destination="-1" id="218"/>
+                                    </connections>
+                                </pickerView>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" id="209">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="211"/>
+                                        <barButtonItem title="Done" style="done" id="210">
+                                            <connections>
+                                                <action selector="hidePicker:" destination="-1" id="212"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                </scrollView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="topBar.png" id="14">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="registerGreyBg.png" id="33">
+                    <rect key="frame" x="0.0" y="43" width="320" height="43"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Register now to buy or sell. It's easy and free." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="41">
+                    <rect key="frame" x="35" y="54" width="251" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="38">
+                    <rect key="frame" x="115" y="13" width="91" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="46">
+                    <rect key="frame" x="0.0" y="0.0" width="44" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" image="iconBack.png">
+                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="backButton:" destination="-1" eventType="touchUpInside" id="216"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="background.png" width="320" height="480"/>
+        <image name="buttonBg.png" width="275" height="45"/>
+        <image name="checkboxOff.png" width="19" height="19"/>
+        <image name="checkboxOn.png" width="19" height="19"/>
+        <image name="iconBack.png" width="19" height="15"/>
+        <image name="registerGreyBg.png" width="320" height="43"/>
+        <image name="selectMenu.png" width="272" height="31"/>
+        <image name="separator.png" width="3" height="61"/>
+        <image name="textfield.png" width="272" height="31"/>
+        <image name="textfieldRegistrationSmall.png" width="177" height="31"/>
+        <image name="topBar.png" width="320" height="48"/>
+        <image name="userIcon.png" width="63" height="68"/>
+        <image name="userPictureBox.png" width="81" height="81"/>
+    </resources>
+</document>

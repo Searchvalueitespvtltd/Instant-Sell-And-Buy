@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyISBViewController">
+            <connections>
+                <outlet property="btnBuying" destination="145" id="214"/>
+                <outlet property="btnEdit" destination="48" id="218"/>
+                <outlet property="btnUserProfile" destination="16" id="219"/>
+                <outlet property="btnWatching" destination="141" id="213"/>
+                <outlet property="searchBar" destination="74" id="215"/>
+                <outlet property="searchDisplayController" destination="197" id="210"/>
+                <outlet property="tblproduct" destination="196" id="205"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background.png" id="4">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="196">
+                    <rect key="frame" x="0.0" y="127" width="320" height="353"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="212"/>
+                        <outlet property="delegate" destination="-1" id="211"/>
+                    </connections>
+                </tableView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="registerGreyBg.png" id="99">
+                    <rect key="frame" x="0.0" y="43" width="320" height="43"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <searchBar contentMode="redraw" barStyle="black" placeholder="Search" id="74">
+                    <rect key="frame" x="0.0" y="83" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="203"/>
+                    </connections>
+                </searchBar>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="topBar.png" id="14">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="48">
+                    <rect key="frame" x="239" y="7" width="72" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                    <state key="normal" backgroundImage="navBtnBg.png">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="editBtnClick:" destination="-1" eventType="touchUpInside" id="207"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My ISB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="15">
+                    <rect key="frame" x="132" y="12" width="57" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.59999999999999998" colorSpace="calibratedWhite"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="16" userLabel="Button-Setting">
+                    <rect key="frame" x="10" y="6" width="32" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" image="iconUserProfile.png">
+                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="userProfileClick:" destination="-1" eventType="touchUpInside" id="206"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="141">
+                    <rect key="frame" x="40" y="49" width="120" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="14"/>
+                    <state key="normal" title="Watching" backgroundImage="tabLeft.png">
+                        <color key="titleColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" backgroundImage="tabLeftSel.png">
+                        <color key="titleColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="watchingProductClick:" destination="-1" eventType="touchUpInside" id="208"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="145">
+                    <rect key="frame" x="160" y="49" width="120" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="14"/>
+                    <state key="normal" title="Buying" backgroundImage="tabRight.png">
+                        <color key="titleColor" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="Buying" backgroundImage="tabRightSel.png">
+                        <color key="titleColor" red="0.1843137255" green="0.1843137255" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buyingProductClick:" destination="-1" eventType="touchUpInside" id="209"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <searchDisplayController id="197">
+            <connections>
+                <outlet property="delegate" destination="-1" id="198"/>
+                <outlet property="searchContentsController" destination="-1" id="200"/>
+                <outlet property="searchResultsDataSource" destination="-1" id="201"/>
+                <outlet property="searchResultsDelegate" destination="-1" id="202"/>
+            </connections>
+        </searchDisplayController>
+    </objects>
+    <resources>
+        <image name="background.png" width="320" height="480"/>
+        <image name="iconUserProfile.png" width="32" height="32"/>
+        <image name="navBtnBg.png" width="57" height="29"/>
+        <image name="registerGreyBg.png" width="320" height="43"/>
+        <image name="tabLeft.png" width="120" height="29"/>
+        <image name="tabLeftSel.png" width="120" height="29"/>
+        <image name="tabRight.png" width="120" height="29"/>
+        <image name="tabRightSel.png" width="120" height="29"/>
+        <image name="topBar.png" width="320" height="48"/>
+    </resources>
+</document>
