@@ -256,7 +256,7 @@
                             <rect key="frame" x="31" y="574" width="263" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="165"/>
                             </connections>
@@ -392,7 +392,7 @@
                             <rect key="frame" x="26" y="620" width="272" height="31"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PayPal Account" minimumFontSize="17" id="271">
+                        <textField opaque="NO" clipsSubviews="YES" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PayPal Account" minimumFontSize="17" id="271">
                             <rect key="frame" x="33" y="621" width="263" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

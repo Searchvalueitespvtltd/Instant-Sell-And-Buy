@@ -15,6 +15,17 @@ typedef enum TheRequestTypes
 
 }ServerRequestType;
 
+////-------------Enum for retrieving image for User lists-----------------
+
+typedef enum ImageSection
+{
+    kActiveUser = 0,
+    kBlockUser,
+    kRejectedUser,
+    kNewActiveuser
+    
+}ImageFetchIndex;
+
 BOOL sprint_data;
 
 //NSString const *DEVICE_TOKEN;

@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "997"
-            endingLineNumber = "997"
+            startingLineNumber = "1036"
+            endingLineNumber = "1036"
             landmarkName = "-createListWithName:jabber:previous:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "989"
-            endingLineNumber = "989"
+            startingLineNumber = "1028"
+            endingLineNumber = "1028"
             landmarkName = "-createListWithName:jabber:previous:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1304"
-            endingLineNumber = "1304"
+            startingLineNumber = "1343"
+            endingLineNumber = "1343"
             landmarkName = "-onRejectBtn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1226"
-            endingLineNumber = "1226"
+            startingLineNumber = "1265"
+            endingLineNumber = "1265"
             landmarkName = "-onBlockBtn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1281"
-            endingLineNumber = "1281"
+            startingLineNumber = "1320"
+            endingLineNumber = "1320"
             landmarkName = "-onRejectBtn:"
             landmarkType = "5">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1174"
-            endingLineNumber = "1174"
+            startingLineNumber = "1213"
+            endingLineNumber = "1213"
             landmarkName = "-unsubscribeUserFrom:index:"
             landmarkType = "5">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "787"
-            endingLineNumber = "787"
+            startingLineNumber = "805"
+            endingLineNumber = "805"
             landmarkName = "-arrayFromUserDefaultForKey:update:"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "902"
-            endingLineNumber = "902"
+            startingLineNumber = "941"
+            endingLineNumber = "941"
             landmarkName = "-privacyListName:previousList:update:option:"
             landmarkType = "5">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412163455.349637"
+            timestampString = "412260740.760485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-usersAvailable"
             landmarkType = "5">
          </BreakpointContent>
@@ -840,13 +840,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[SellerProfileViewController callUserrating]"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
-                  timestampString = "412250031.510866"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
+                  timestampString = "412262000.023114"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "326"
                   endingLineNumber = "326"
-                  offsetFromSymbolStart = "20">
+                  offsetFromSymbolStart = "25">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -854,13 +854,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[SellerProfileViewController callUserrating]"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
-                  timestampString = "412250031.511122"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
+                  timestampString = "412262000.023523"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "326"
                   endingLineNumber = "326"
-                  offsetFromSymbolStart = "226">
+                  offsetFromSymbolStart = "201">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1174,13 +1174,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[SellerProfileViewController responseHandler:andRequestIdentifier:]"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
-                  timestampString = "412250031.516924"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
+                  timestampString = "412262000.030316"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "235"
                   endingLineNumber = "235"
-                  offsetFromSymbolStart = "1260">
+                  offsetFromSymbolStart = "1591">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1188,13 +1188,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "__68-[SellerProfileViewController responseHandler:andRequestIdentifier:]_block_invoke"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
-                  timestampString = "412250031.517188"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ProfileViewController/SellerProfileViewController/SellerProfileViewController-1.m"
+                  timestampString = "412262000.030711"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "236"
-                  endingLineNumber = "236"
-                  offsetFromSymbolStart = "188">
+                  startingLineNumber = "235"
+                  endingLineNumber = "235"
+                  offsetFromSymbolStart = "59">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1558,11 +1558,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1567"
-            endingLineNumber = "1567"
+            startingLineNumber = "1606"
+            endingLineNumber = "1606"
             landmarkName = "-xmppPrivacy:didSetListWithName:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1574,11 +1574,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "817"
-            endingLineNumber = "817"
+            startingLineNumber = "835"
+            endingLineNumber = "835"
             landmarkName = "-checkForUserInPrivacyList:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1590,11 +1590,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "835"
-            endingLineNumber = "835"
+            startingLineNumber = "853"
+            endingLineNumber = "853"
             landmarkName = "-checkForUserInPrivacyList:"
             landmarkType = "5">
             <Locations>
@@ -1636,11 +1636,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412163455.349637"
+            timestampString = "412260740.760485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-usersAvailable"
             landmarkType = "5">
             <Locations>
@@ -1682,11 +1682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "256"
-            endingLineNumber = "256"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-testMessageArchiving"
             landmarkType = "5">
          </BreakpointContent>
@@ -1698,11 +1698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-print:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1714,11 +1714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412163455.349637"
+            timestampString = "412260740.760485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-usersAvailable"
             landmarkType = "5">
          </BreakpointContent>
@@ -1730,11 +1730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "838"
-            endingLineNumber = "838"
+            startingLineNumber = "856"
+            endingLineNumber = "856"
             landmarkName = "-checkForUserInPrivacyList:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1762,11 +1762,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1369"
-            endingLineNumber = "1369"
+            startingLineNumber = "1408"
+            endingLineNumber = "1408"
             landmarkName = "-xmppPrivacy:didReceiveListNames:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1778,11 +1778,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-getUserRequests"
             landmarkType = "5">
          </BreakpointContent>
@@ -1790,15 +1790,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412163455.349637"
+            timestampString = "412260740.760485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-usersAvailable"
             landmarkType = "5">
          </BreakpointContent>
@@ -1810,11 +1810,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1826,11 +1826,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1842,11 +1842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1430"
-            endingLineNumber = "1430"
+            startingLineNumber = "1469"
+            endingLineNumber = "1469"
             landmarkName = "-xmppPrivacy:didReceiveListWithName:items:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1858,13 +1858,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "698"
-            endingLineNumber = "698"
-            landmarkName = "-bringImages:"
-            landmarkType = "5">
+            startingLineNumber = "706"
+            endingLineNumber = "706"
+            landmarkName = "@implementation ChatViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1872,13 +1872,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[ChatViewController bringImages:]"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ChatViewController/ChatViewController.m"
-                  timestampString = "412250031.527008"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ChatViewController/ChatViewController.m"
+                  timestampString = "412262000.042406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "698"
-                  endingLineNumber = "698"
-                  offsetFromSymbolStart = "22">
+                  startingLineNumber = "706"
+                  endingLineNumber = "706"
+                  offsetFromSymbolStart = "33">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1886,13 +1886,13 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[ChatViewController bringImages:]"
                   moduleName = "ISB"
-                  urlString = "file:///Users/Dex/Downloads/ISB/ISB/ChatViewController/ChatViewController.m"
-                  timestampString = "412250031.527258"
+                  urlString = "file:///Users/Dex/Instant-Sell-And-Buy/ISB/ISB/ChatViewController/ChatViewController.m"
+                  timestampString = "412262000.042773"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "698"
-                  endingLineNumber = "698"
-                  offsetFromSymbolStart = "266">
+                  startingLineNumber = "706"
+                  endingLineNumber = "706"
+                  offsetFromSymbolStart = "285">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1904,11 +1904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "732"
-            endingLineNumber = "732"
+            startingLineNumber = "740"
+            endingLineNumber = "740"
             landmarkName = "-handledImage:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1920,11 +1920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261999.430357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1423"
-            endingLineNumber = "1423"
+            startingLineNumber = "1462"
+            endingLineNumber = "1462"
             landmarkName = "-xmppPrivacy:didReceiveListWithName:items:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1936,12 +1936,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "808"
-            endingLineNumber = "808"
-            landmarkName = "-retreiveListName:"
+            startingLineNumber = "826"
+            endingLineNumber = "826"
+            landmarkName = "-checkForUserInPrivacyList:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1952,11 +1952,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "485"
+            endingLineNumber = "485"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2028,15 +2028,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
+            startingLineNumber = "398"
+            endingLineNumber = "398"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2140,15 +2140,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412249979.381741"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "768"
-            endingLineNumber = "768"
+            startingLineNumber = "786"
+            endingLineNumber = "786"
             landmarkName = "-callWebService"
             landmarkType = "5">
          </BreakpointContent>
@@ -2192,11 +2192,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ISB/ChatViewController/ChatViewController.m"
-            timestampString = "412240214.858599"
+            timestampString = "412261654.069821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "-getUserRequests"
             landmarkType = "5">
          </BreakpointContent>
@@ -2230,6 +2230,118 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "-responseHandler:andRequestIdentifier:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/RegistrationViewController/RegistrationViewController.m"
+            timestampString = "412255632.126139"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "-pickerView:didSelectRow:inComponent:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/RegistrationViewController/RegistrationViewController.m"
+            timestampString = "412256769.100286"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-imagePickerControllerDidCancel:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/RegistrationViewController/RegistrationViewController.m"
+            timestampString = "412257849.480186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "862"
+            endingLineNumber = "862"
+            landmarkName = "-hidePicker:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/ChatViewController/ChatViewController.m"
+            timestampString = "412261654.069821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "715"
+            endingLineNumber = "715"
+            landmarkName = "-doFetchEditionImage:withIndex:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/ChatViewController/ChatViewController.m"
+            timestampString = "412261654.069821"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "656"
+            endingLineNumber = "656"
+            landmarkName = "-responseHandler:andRequestIdentifier:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/ChatViewController/ChatViewController.m"
+            timestampString = "412262011.286799"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "908"
+            endingLineNumber = "908"
+            landmarkName = "-fetcheImagesFrom:forSection:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISB/ChatViewController/ChatViewController.m"
+            timestampString = "412262030.954903"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "917"
+            endingLineNumber = "917"
+            landmarkName = "-fetcheImagesFrom:forSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

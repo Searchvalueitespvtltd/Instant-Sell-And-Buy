@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationViewController">
             <connections>
+                <outlet property="addressTxtField" destination="nKm-S2-fjg" id="elK-JX-Id8"/>
                 <outlet property="cityTxtPassword" destination="h8Q-ue-OHm" id="GyW-kg-gV7"/>
                 <outlet property="confirmEmailTxtField" destination="eWu-hz-g1J" id="xAh-bT-vOc"/>
                 <outlet property="confirmpasswordTxtField" destination="nMM-ZE-L8a" id="CeX-rQ-xhN"/>
@@ -180,7 +181,7 @@
                             <rect key="frame" x="31" y="571" width="263" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="mre-1S-Von"/>
                             </connections>
@@ -346,7 +347,7 @@
                             <rect key="frame" x="24" y="616" width="272" height="31"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </imageView>
-                        <textField opaque="NO" clipsSubviews="YES" tag="114" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PayPal Account" minimumFontSize="17" id="60t-vn-lv2">
+                        <textField opaque="NO" clipsSubviews="YES" tag="115" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PayPal Account" minimumFontSize="17" id="60t-vn-lv2">
                             <rect key="frame" x="31" y="617" width="263" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>

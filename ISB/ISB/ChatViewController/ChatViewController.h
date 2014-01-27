@@ -26,9 +26,12 @@
     NSMutableArray* previousBlockList;
     NSMutableArray* previousRejectedList;
     NSMutableArray* activeLocalList;
+    
     NSMutableDictionary*    blockUserImageList;
     NSMutableDictionary*    rejectedUserImageList;
     NSMutableDictionary*    newActiveUserImageList;
+    
+    NSInteger   sectionForImage;
 
 }
 @property (nonatomic,retain) IBOutlet UITableView *tView;

@@ -159,7 +159,7 @@
 {
     [stateTxtField resignFirstResponder];
     [countryTxtField resignFirstResponder];
-//    switch(textFieldTouched)
+   //    switch(textFieldTouched)
 //    {
 //        case 1:
 //            //    [btnPostageType setTitle:[NSString stringWithString:[[arrPostageType objectAtIndex:row]valueForKey:@"name"]] forState:UIControlStateNormal];
@@ -209,9 +209,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 
@@ -232,6 +230,8 @@
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    [self.countryBtn setUserInteractionEnabled:NO];
+    [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentOffset:CGPointMake(0, textField.frame.origin.y-30) animated:YES];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
@@ -470,7 +470,12 @@
             [confirmEmailTxtField becomeFirstResponder];
             break;
         case 114:
-            [confirmEmailTxtField resignFirstResponder];
+                [confirmEmailTxtField resignFirstResponder];
+                [_txtPayPalAccountId becomeFirstResponder];
+                break;
+        case 115:
+            {
+                [_txtPayPalAccountId resignFirstResponder];
                 if([[UIScreen mainScreen] bounds].size.height>480)
                 {
                     [self.scrollView setContentOffset:CGPointMake(0, 340) animated:YES];
@@ -480,6 +485,7 @@
                     [self.scrollView setContentOffset:CGPointMake(0, 400) animated:YES];
                 }
                 break;
+            }
             
         default:
             
@@ -490,25 +496,31 @@
     
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (textField == zipCodeTxtField) {
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField == zipCodeTxtField)
+    {
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 8) ? NO : YES;
-    }else if (textField == phoneNoTxtField)
-        
+    }
+    else if (textField == phoneNoTxtField)
     {
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 10) ? NO : YES;
-    }else if(textField == phoneNoPrefixTxtField)
+    }
+    else if(textField == phoneNoPrefixTxtField)
     {
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 4) ? NO : YES;
     }
-    else
+    else if (textField != addressTxtField && textField != emailAddressTxtField && textField != confirmEmailTxtField && textField != _txtPayPalAccountId)
     {
         NSUInteger newLength = [textField.text length] + [string length] - range.length;
         return (newLength > 30) ? NO : YES;
-        
+    }
+    else
+    {
+        return YES;
     }
 }
 
@@ -831,7 +843,9 @@
 
 - (IBAction)showCountryPicker:(id)sender
 {
+    [self.countryBtn setUserInteractionEnabled:NO];
     [self.view endEditing:YES];
+    [self.scrollView setScrollEnabled:NO];
      [Utils startActivityIndicatorInView:self.view withMessage:nil];
     [self performSelector:@selector(callCountries) withObject:nil afterDelay:1.0];
 //    [Utils startActivityIndicatorInView:self.view withMessage:nil];
@@ -843,7 +857,9 @@
 
 - (IBAction)hidePicker:(id)sender
 {
-     [self.view endEditing:YES];
+    [self.countryBtn setUserInteractionEnabled:NO];
+    [self.scrollView setScrollEnabled:YES];
+    [self.view endEditing:YES];
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.3];
     pickerContainer.frame = CGRectMake(0, 1000, 320, 261);

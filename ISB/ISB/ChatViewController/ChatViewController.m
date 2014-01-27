@@ -33,6 +33,7 @@
 - (void) reloadBlockAndRejectList;
 - (void) createList:(NSString*)list array:(NSArray*)array;
 
+- (void) fetcheImagesFrom:(NSArray*)userList forSection:(ImageFetchIndex)imageIndex;
 -(void)callWebService;
 
 //- (void) saveListInUserDefault:(NSString*) listname listArray:(NSArray*) listArray;
@@ -186,11 +187,13 @@
  
    // [tView reloadData];
 //    [self testMessageArchiving];
-    NSString * result;
+    //NSString * result;
     if ([userNames count] > 0)
     {
-        result = [userNames componentsJoinedByString:@","];
-        [self callWebService:result];
+        [self fetcheImagesFrom:userNames forSection:kActiveUser];
+//        result = [userNames componentsJoinedByString:@","];
+//        sectionForImage= kActiveUser;
+//        [self callWebService:result];
     }
     
     ReleaseObject(blockList);
@@ -199,7 +202,6 @@
     blockList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kBlockList]];
     rejectedList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kRejectList]];
     activeLocalList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kActiveList]];
-    
     [self getUserRequests];
     
     if( [[UIScreen mainScreen] bounds].size.height > 480)
@@ -735,30 +737,40 @@
     {
 //        NSLog(@"%d",inRequest.index);
         UIImage * img = [UIImage imageWithData: aImageData];
-        if (img) {
-       
-        NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
-        NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
-            NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
-//            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
-            return [ID isEqualToString:cellIndex];
-        }];
-//        NSLog(@"filteredIndexes %d",filteredIndexes);
-        if (filteredIndexes != NSNotFound) {
-            NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
-            UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
-            UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
-            imageVw.image=img;
-            
-            NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
-            aTemp=[messages objectAtIndex:filteredIndexes];
-//            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
-            [aTemp setObject:img forKey:@"Image"];
-            [messages replaceObjectAtIndex:filteredIndexes withObject:aTemp];
-                               }
-                 }
+        
+        switch (sectionForImage)
+        {
+            case kActiveUser:
+            {
+                if (img) {
+                    
+                    NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+                    NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+                        NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+                        //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+                        return [ID isEqualToString:cellIndex];
+                    }];
+                    //        NSLog(@"filteredIndexes %d",filteredIndexes);
+                    if (filteredIndexes != NSNotFound) {
+                        NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
+                        UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+                        UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+                        imageVw.image=img;
+                        
+                        NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
+                        aTemp=[messages objectAtIndex:filteredIndexes];
+                        //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+                        [aTemp setObject:img forKey:@"Image"];
+                        [messages replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+                    }
+                }
+                break;
+            }
+            default:
+                break;
+        }
     }
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+           [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 #pragma mark - Private Methods
@@ -885,6 +897,27 @@
     [xmppPrivacy setActiveListName:list];
 }
 
+- (void) fetcheImagesFrom:(NSArray*)userList forSection:(ImageFetchIndex)imageIndex
+{
+    NSMutableArray* userNameArray = [[NSMutableArray alloc] init];
+    
+    if (imageIndex != kActiveUser)
+    {
+        for (int i = 0; i < [userList count]; i++)
+        {
+            [userNameArray addObject:[[[userList objectAtIndex:i]componentsSeparatedByString:@"@"]objectAtIndex:0]];
+        }
+
+    }
+    else
+    {
+        userNameArray = [NSMutableArray arrayWithArray:userList];
+    }
+    NSString* userNameString = [userNameArray componentsJoinedByString:@","];
+    sectionForImage = imageIndex;
+    [self callWebService:userNameString];
+    [userNameArray release];
+}
 - (NSXMLElement*) elementWithJabber:(NSString*)jabberId order:(NSInteger) order
 {
     NSXMLElement* newElement = [XMPPPrivacy privacyItemWithType:@"jid" value:jabberId action:@"deny" order:order];
