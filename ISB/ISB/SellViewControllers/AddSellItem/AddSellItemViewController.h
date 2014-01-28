@@ -10,7 +10,7 @@
 
 @interface AddSellItemViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 {
-    UIImagePickerController *picker;
+    UIImagePickerController *imagePicker;
     NSMutableDictionary *dicAddSellItem;
     UIButton *instance;
     UIButton *radioInstance;

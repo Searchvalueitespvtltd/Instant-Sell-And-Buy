@@ -75,7 +75,7 @@
 +(void)openTWComposerInViewController:(UIViewController *)vc withText:(NSString *)initialText
 {
     TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
-    NSArray *array=[initialText componentsSeparatedByString:@"!!!"];
+   // NSArray *array=[initialText componentsSeparatedByString:@"!!!"];
 
     [twitter setInitialText:initialText];
     [twitter setTitle:@"Instant Sell & Buy"];

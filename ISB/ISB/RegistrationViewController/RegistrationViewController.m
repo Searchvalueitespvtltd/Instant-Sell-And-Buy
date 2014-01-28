@@ -23,7 +23,7 @@
 
 @implementation RegistrationViewController
 
-@synthesize countryArray,stateArray,picker,imgBackCamera,imgCamera,imgUserDefaultImage,stringCountry_id;
+@synthesize countryArray,stateArray,imagePicker,imgBackCamera,imgCamera,imgUserDefaultImage,stringCountry_id;
 
 @synthesize scrollView,firstNameTxtField,lastNameTxtField,userNameTxtField,passwordTxtField,confirmpasswordTxtField,addressTxtField,checkBoxBtn,cityTxtPassword,confirmEmailTxtField,countryTxtField,zipCodeTxtField,phoneNoPrefixTxtField,phoneNoTxtField,emailAddressTxtField,signUpBtn,stateTxtField,termAndConditionBtn,toolBar,stateBtn,countryBtn,pickerContainer,pickerView;
 
@@ -43,9 +43,9 @@
     [super viewDidLoad];
     imgCamera.layer.cornerRadius = 2.5;
     imgCamera.layer.masksToBounds = YES;
-    picker = [[UIImagePickerController alloc]init];
-    picker.allowsEditing = NO;
-    picker.delegate=self;
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.allowsEditing = NO;
+    imagePicker.delegate=self;
     [scrollView setScrollEnabled:YES];
      pickerContainer.frame = CGRectMake(0, 1000, 320, 261);
    signUpBtn.enabled=NO;
@@ -83,9 +83,9 @@
 //    [button2 setBackgroundImage:img2 forState:UIControlStateNormal];
 //    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self
-                                                    cancelButtonTitle:@"" destructiveButtonTitle:nil otherButtonTitles:@"", @"", nil];
-    actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self
+                                                    cancelButtonTitle:@"" destructiveButtonTitle:nil otherButtonTitles: @"",@"", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
       [actionSheet showInView:self.view];
     
     [[[actionSheet valueForKey:@"_buttons"] objectAtIndex:0] setImage:[UIImage imageNamed:@"btnTakePicture.png"] forState:UIControlStateNormal];
@@ -102,7 +102,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Picking Image from Camera/ Library
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
     self.imgBackCamera.hidden = NO;
     self.imgCamera.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
         self.imgUserDefaultImage.hidden = YES;
@@ -128,8 +128,8 @@
         {
             if ([UIImagePickerController isSourceTypeAvailable:SOURCETYPE])
             {
-                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                [self presentViewController:picker animated:YES completion:nil];
+                imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:imagePicker animated:YES completion:nil];
             }
             else
             {
@@ -140,8 +140,8 @@
             break;
         case 1:
         {
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:picker animated:YES completion:nil];
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePicker animated:YES completion:nil];
         }
         default:
             // Do Nothing.........
@@ -209,7 +209,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    [imagePicker dismissViewControllerAnimated:YES completion:NULL];
 }
 
 
@@ -786,9 +786,9 @@
             [self.scrollView setContentOffset:CGPointMake(0, countryTxtField.frame.origin.y-30) animated:YES];
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:0.3];
-            if([[UIScreen mainScreen] bounds].size.height>480)
+            if([[UIScreen mainScreen] bounds].size.height > 480)
             {
-                pickerContainer.frame = CGRectMake(0, 290, 320, 261);
+                pickerContainer.frame = CGRectMake(0, 520, 320, 261);
                 
             }
             else{

@@ -12,8 +12,6 @@
 
 @interface MessageViewController ()
 
-- (void) onLongPressGesture:(UILongPressGestureRecognizer*)gesture;
-
 @end
 
 @implementation MessageViewController
@@ -155,7 +153,7 @@
         if([[inResponseDic objectAtIndex:0]isKindOfClass:[NSDictionary class]])
         {
             
-            NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithArray:inResponseDic];
+            //NSMutableArray *arrTemp = [[NSMutableArray alloc]initWithArray:inResponseDic];
 //            arrMessageList= [[[arrTemp reverseObjectEnumerator] allObjects] mutableCopy];
             arrMessageList = [[NSMutableArray alloc]initWithArray:inResponseDic];
             arrMessageListCopy = [[NSMutableArray alloc]initWithArray:arrMessageList];

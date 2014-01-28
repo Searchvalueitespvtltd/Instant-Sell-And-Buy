@@ -50,9 +50,9 @@
     }
 
     
-    picker = [[UIImagePickerController alloc]init];
-    picker.allowsEditing = NO;
-    picker.delegate=self;
+    imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.allowsEditing = NO;
+    imagePicker.delegate=self;
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(willKeyBoardShow)
@@ -209,7 +209,7 @@
                     [but1 setEnabled:YES];
 
                     NSData *imageData1 = [NSData dataWithContentsOfURL:[NSURL URLWithString: imageUrlstr1]];
-                    UIImage *img= [UIImage imageWithData:imageData1];
+                    //UIImage *img= [UIImage imageWithData:imageData1];
 //                if (img) {
                     imgCamera1.image = [UIImage imageWithData:imageData1];
 //                }else
@@ -235,7 +235,7 @@
                     [but2 setEnabled:YES];
 
                     NSData *imageData2 = [NSData dataWithContentsOfURL:[NSURL URLWithString: imageUrlstr2]];
-                    UIImage *img= [UIImage imageWithData:imageData2];
+                 //   UIImage *img= [UIImage imageWithData:imageData2];
 //                if (img) {
                     imgCamera2.image = [UIImage imageWithData:imageData2];
 //                }else
@@ -261,7 +261,7 @@
                 {
                 
                     NSData *imageData3 = [NSData dataWithContentsOfURL:[NSURL URLWithString: imageUrlstr3]];
-                    UIImage *img= [UIImage imageWithData:imageData3];
+                    // UIImage *img= [UIImage imageWithData:imageData3];
                     [but3 setEnabled:YES];
 //                if (img) {
                     imgCamera3.image = [UIImage imageWithData:imageData3];
@@ -406,7 +406,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Picking Image from Camera/ Library
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    [imagePicker dismissViewControllerAnimated:YES completion:nil];
     self.imgBackCamera.hidden = NO;
     switch (instance.tag) {
         case 101:
@@ -451,8 +451,8 @@
         {
             if ([UIImagePickerController isSourceTypeAvailable:SOURCETYPE])
             {
-                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-                [self presentViewController:picker animated:YES completion:nil];
+                imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:imagePicker animated:YES completion:nil];
             }
             else
             {
@@ -463,8 +463,8 @@
             break;
         case 1:
         {
-            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:picker animated:YES completion:nil];
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:imagePicker animated:YES completion:nil];
             
         }
          break;    
@@ -659,8 +659,23 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+    [imagePicker dismissViewControllerAnimated:YES completion:NULL];
       //self.imgBackCamera.hidden = YES;
+}
+
+-(IBAction)btnTakePicClicked:(id)sender
+{
+    // Implemented to remove warning
+}
+
+-(IBAction)btnChoosePicClicked:(id)sender
+{
+    // Implemented to remove warning
+}
+
+-(IBAction)btnCancelClicked:(id)sender
+{
+   // Implemented to remove warning
 }
 
 

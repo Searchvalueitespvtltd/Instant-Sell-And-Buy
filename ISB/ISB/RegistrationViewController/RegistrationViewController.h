@@ -14,14 +14,14 @@
     NSMutableArray *countryArray;
     int country_id;
     int state_id;
-    UIImagePickerController *picker;
+    UIImagePickerController *imagePicker;
 
      BOOL isSelected;
 }
 @property(retain,nonatomic)NSString *stringCountry_id;
 @property(retain,nonatomic)IBOutlet UIImageView *imgCamera;
 @property(retain,nonatomic)IBOutlet UIImageView *imgBackCamera;
-@property (retain, nonatomic)UIImagePickerController *picker;
+@property (retain, nonatomic)UIImagePickerController *imagePicker;
 @property (retain, nonatomic) NSMutableArray *stateArray;
 @property (retain, nonatomic) NSMutableArray *countryArray;
 @property (retain,nonatomic)IBOutlet UIPickerView *pickerView;

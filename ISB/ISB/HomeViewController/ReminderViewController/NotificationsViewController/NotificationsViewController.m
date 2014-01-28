@@ -141,7 +141,7 @@
 }
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        UITableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
+        //UITableViewCell *cell=[tableView cellForRowAtIndexPath:indexPath];
     
     if ([arrayNotifications count] >0)
         return YES;

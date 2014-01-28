@@ -422,14 +422,14 @@
     if ([name isEqualToString:kRejectList])
     {
         NSLog(@"Reject list was found.-----------------");
-        NSMutableArray* listToAdd = [[NSMutableArray alloc]initWithArray:(NSArray*)[self arrayFromUserDefaultForKey:kRejectListToAdd]];
+        //NSMutableArray* listToAdd = [[NSMutableArray alloc]initWithArray:(NSArray*)[self arrayFromUserDefaultForKey:kRejectListToAdd]];
       //  [self privacyListName:kRejectList previousList:items update:listToAdd ];
         [Utils removeListInUserDefault:kRejectListToAdd];
     }
     else if ([name isEqualToString:kBlockList])
     {
         NSLog(@"Block list was not found----------------");
-        NSMutableArray* listToAdd = [[NSMutableArray alloc]initWithArray:(NSArray*)[self arrayFromUserDefaultForKey:kBlockListToAdd]];
+        //NSMutableArray* listToAdd = [[NSMutableArray alloc]initWithArray:(NSArray*)[self arrayFromUserDefaultForKey:kBlockListToAdd]];
         //[self privacyListName:kBlockList previousList:items update:listToAdd];
         [Utils removeListInUserDefault:kBlockListToAdd];
     }
@@ -458,6 +458,8 @@
     NSLog(@"%@", Arr);
     
     NSArray* arr1 = [sender listWithName:kBlockList];
+    NSLog(@"%@",arr1);
+    
     [sender addDelegate:nil delegateQueue:nil];
 }
 

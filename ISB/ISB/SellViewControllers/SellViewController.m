@@ -435,7 +435,7 @@ int j;
     }
 }
 
--(void)doFetchEditionImage:(NSString *)inImageId withIndex:(NSInteger)index
+-(void)doFetchEditionImage:(NSString *)inImageId withIndex:(NSInteger)indx
 {
     SHRequestSampleImage *aRequest = [[SHRequestSampleImage alloc] initWithURL: nil] ;
     [aRequest setImageId:inImageId];
@@ -443,7 +443,7 @@ int j;
     [aRequest SetErrorHandler:@selector(errorHandler:)];
     [aRequest SetResponseHandlerObj:self];
     [aRequest SetRequestType:eRequestType1];
-    aRequest.index = index;
+    aRequest.index = indx;
     
     [gHttpRequestProcessor ProcessImage: aRequest];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];

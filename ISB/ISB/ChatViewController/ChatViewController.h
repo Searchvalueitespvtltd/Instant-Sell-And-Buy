@@ -14,11 +14,12 @@
 @interface ChatViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,SMMessageDelegate>
 {
     UITableView		*tView;
+    
 	NSMutableArray *turnSockets;
     NSMutableArray	*messages;
     NSMutableArray	*userNames;
     NSMutableArray	*responseArray;
-     NSMutableArray	*imageArray;
+    NSMutableArray	*imageArray;
     
     NSMutableArray* blockList;
     NSMutableArray* rejectedList;
@@ -27,15 +28,20 @@
     NSMutableArray* previousRejectedList;
     NSMutableArray* activeLocalList;
     
-    NSMutableDictionary*    blockUserImageList;
-    NSMutableDictionary*    rejectedUserImageList;
-    NSMutableDictionary*    newActiveUserImageList;
+    NSMutableArray*    blockUserImageList;
+    NSMutableArray*    rejectedUserImageList;
+    NSMutableArray*    newActiveUserImageList;
     
     NSInteger   sectionForImage;
 
+    NSMutableDictionary*    idUserNameDic;
+    NSMutableDictionary*    imageUserNameDic;
 }
+
 @property (nonatomic,retain) IBOutlet UITableView *tView;
 @property (nonatomic,retain) IBOutlet UIButton *btnRequest;
+
 - (IBAction) closeChat;
 - (IBAction)btnPendingRequest:(id)sender;
+
 @end

@@ -106,8 +106,8 @@
         for (NSDictionary* str in notificationArray)
         {
             NSMutableString* name = [[ (NSString*)[str objectForKey:@"msg" ] componentsSeparatedByString:@" "] objectAtIndex:4];
-           name = [name substringFromIndex:1];
-            name = [name substringToIndex:[name length] - 2];
+           name = (NSMutableString*)[name substringFromIndex:1];
+            name = (NSMutableString*)[name substringToIndex:[name length] - 2];
             [Utils arrayFromUserDefaultForKey:kBlockedRejectedBy update:name];
             NSArray* arr = [Utils arrayFromUserDefaultForKey:kActiveList];
             

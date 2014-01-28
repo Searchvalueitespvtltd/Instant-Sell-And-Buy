@@ -6,6 +6,9 @@
 //  Copyright (c) 2013 PARNEET CHUGH. All rights reserved.
 //
 
+#define kProfilePicPath @"profile_pic_path"
+#define kID @"id"
+
 #import "XMPPPrivacy.h"
 
 #import "ChatViewController.h"
@@ -31,6 +34,8 @@
 - (void) retreiveListName:(NSString*) listName;
 - (void) checkForUserInPrivacyList:(NSString*) privacyList;
 - (void) reloadBlockAndRejectList;
+
+- (NSArray*) userNameDictionaryArrayFromArray:(NSArray*)objArray;
 - (void) createList:(NSString*)list array:(NSArray*)array;
 
 - (void) fetcheImagesFrom:(NSArray*)userList forSection:(ImageFetchIndex)imageIndex;
@@ -88,7 +93,7 @@
         
         [activeJabberIdList addObject:user.jidStr];
         
-        NSLog(@"User available is %@", user.jidStr);
+       // NSLog(@"User available is %@", user.jidStr);
     }
     
     NSArray * uniqueArray = [[NSOrderedSet orderedSetWithArray:array1] array];
@@ -171,13 +176,19 @@
     previousBlockList = [[NSMutableArray alloc] init];
     
     ReleaseObject(newActiveUserImageList);
-    newActiveUserImageList = [[NSMutableDictionary alloc] init];
+    newActiveUserImageList = [[NSMutableArray alloc] init];
     
     ReleaseObject(rejectedUserImageList);
-    rejectedUserImageList = [[NSMutableDictionary alloc] init];
+    rejectedUserImageList = [[NSMutableArray alloc] init];
     
     ReleaseObject(blockUserImageList);
-    blockUserImageList = [[NSMutableDictionary alloc] init];
+    blockUserImageList = [[NSMutableArray alloc] init];
+    
+    ReleaseObject(idUserNameDic);
+    ReleaseObject(imageUserNameDic);
+    
+    idUserNameDic = [[NSMutableDictionary alloc] init];
+    imageUserNameDic = [[NSMutableDictionary alloc] init];
 
     [HttpRequestProcessor shareHttpRequest];
     [self retreiveListName:kBlockList];
@@ -190,10 +201,21 @@
     //NSString * result;
     if ([userNames count] > 0)
     {
+        sectionForImage = kActiveUser;
         [self fetcheImagesFrom:userNames forSection:kActiveUser];
 //        result = [userNames componentsJoinedByString:@","];
 //        sectionForImage= kActiveUser;
 //        [self callWebService:result];
+    }
+    else if ([blockList count] > 0)
+    {
+        sectionForImage = kBlockUser;
+        [self fetcheImagesFrom:blockList forSection:kBlockUser];
+    }
+    else if ([rejectedList count] > 0)
+    {
+        sectionForImage = kRejectedUser;
+        [self fetcheImagesFrom:rejectedList forSection:kRejectedUser];
     }
     
     ReleaseObject(blockList);
@@ -354,6 +376,8 @@
     
     if (indexPath.section == 0)/// Sect
     {
+        NSString* userID = [idUserNameDic objectForKey:[activeLocalList objectAtIndex:indexPath.row]];
+        UIImage* img = (UIImage*)[imageUserNameDic objectForKey:userID];
         UIView *selectionColor = [[UIView alloc] init];
         selectionColor.backgroundColor = [UIColor colorWithRed:(240/255.0) green:(238/255.0) blue:(233/255.0) alpha:1];
         cell.selectedBackgroundView = selectionColor;
@@ -364,12 +388,47 @@
         
         label.text=[[[activeLocalList objectAtIndex:indexPath.row] componentsSeparatedByString:@"@"] objectAtIndex:0];
         //label.text =[[[[messages objectAtIndex:indexPath.row] valueForKey:@"UserName"]componentsSeparatedByString:@"@"] objectAtIndex:0];
+        UIImageView *imgView=(UIImageView *)[cell.contentView viewWithTag:11];
+        if (img)
+        {
+            imgView.image = img;
+        }
+        else
+        {
+            imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+            
+        }
+
         if (![userNames containsObject:label.text])
         {
             cell.userInteractionEnabled = NO;
             cell.contentView.alpha = 0.2;
             firstButton.alpha = 0.3;
             secondButton.alpha = 0.3;
+            
+            
+//            if ([newActiveUserImageList count] > rowNumber)
+//            {
+//                if (![[[newActiveUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath] isKindOfClass:[NSNull class]])
+//                {
+//                    if ([[newActiveUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath])
+//                    {
+//                        imgView.image=[[newActiveUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath];
+//                    }
+//                    else
+//                    {
+//                        imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//                    }
+//                }
+//                else
+//                {
+//                    imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//                }
+//            }
+//            else
+//            {
+//                imgView.image = [UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//            }
         }
         else if ([userNames count] > rowNumber)
         {
@@ -378,23 +437,25 @@
             firstButton.alpha = 1;
             secondButton.alpha = 1;
             //    cell.textLabel.text = [[[messages objectAtIndex:indexPath.row]componentsSeparatedByString:@"@"] objectAtIndex:0];
-            label.highlightedTextColor = [UIColor blackColor];
+          //  label.highlightedTextColor = [UIColor blackColor];
             
-            UIImageView *imgView=(UIImageView *)[cell.contentView viewWithTag:11];
-            NSInteger userIndex = [userNames indexOfObject:label.text];
+            //UIImageView *imgView=(UIImageView *)[cell.contentView viewWithTag:11];
+            //NSInteger userIndex = [userNames indexOfObject:label.text];
             
-            if ([[messages objectAtIndex:userIndex] valueForKey:@"Image"])
-            {
-                imgView.image=[[messages objectAtIndex:userIndex] valueForKey:@"Image"];
-            }else
-                imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//            if ([[messages objectAtIndex:userIndex] valueForKey:@"Image"])
+//            {
+//                imgView.image=[[messages objectAtIndex:userIndex] valueForKey:@"Image"];
+//            }
+//            else
+//            {
+//                imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//            }
             
             if ([[self arrayFromUserDefaultForKey:kNewMsgUserJID] containsObject:[activeLocalList objectAtIndex:rowNumber]])
             {
-                NSLog(@"New message found from the user ---------------------------------------------------> %@", label.text);
+               // NSLog(@"New message found from the user ---------------------------------------------------> %@", label.text);
 
                 cell.backgroundColor = [UIColor cyanColor];
-                //cell.backgroundView.backgroundColor = [UIColor redColor];//[UIColor colorWithRed:0.456 green:0.233 blue:0.299 alpha:1];
             }
             else
             {
@@ -412,9 +473,7 @@
             {
                 
                 NSLog(@"New message found from the user ---------------------------------------------------> %@", label.text);
-                cell.backgroundColor = [UIColor cyanColor];//[UIColor colorWithRed:0.456 green:0.233 blue:0.299 alpha:1];
-               // cell.backgroundView.backgroundColor = [UIColor redColor];//[UIColor colorWithRed:0.456 green:0.233 blue:0.299 alpha:1];
-
+                cell.backgroundColor = [UIColor cyanColor];
             }
             else
             {
@@ -459,6 +518,36 @@
             firstButton.alpha = 1;
             secondButton.alpha = 1;
         }
+        
+        NSString* userID = [idUserNameDic objectForKey:[blockList objectAtIndex:indexPath.row]];
+        UIImage* img = (UIImage*)[imageUserNameDic objectForKey:userID];
+        UIImageView *imgView=(UIImageView *)[cell.contentView viewWithTag:11];
+        if (img)
+        {
+            imgView.image = img;
+        }
+        else
+        {
+            imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+        }
+//        if ([blockUserImageList count] > rowNumber)
+//        {
+//            if (![[[blockUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath] isKindOfClass:[NSNull class]])
+//            {
+//                if ([[blockUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath])
+//                {
+//                    imgView.image=[[blockUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath];
+//                }
+//                else
+//                    imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//            }
+//            else
+//                 imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//        }
+//        else
+//        {
+//            imgView.image = [UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//        }
 
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
@@ -501,6 +590,38 @@
             secondButton.alpha = 1;
         }
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        NSString* userID = [idUserNameDic objectForKey:[rejectedList objectAtIndex:indexPath.row]];
+        UIImage* img = (UIImage*)[imageUserNameDic objectForKey:userID];
+        UIImageView *imgView=(UIImageView *)[cell.contentView viewWithTag:11];
+        if (img)
+        {
+            imgView.image = img;
+        }
+        else
+        {
+            imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+        }
+//        if ([rejectedUserImageList count] > rowNumber)
+//        {
+//            if (![[[rejectedUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath] isKindOfClass:[NSNull class]])
+//            {
+//                
+//                if ([[rejectedUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath])
+//                {
+//                    imgView.image=[[rejectedUserImageList objectAtIndex:rowNumber] valueForKey:kProfilePicPath];
+//                }
+//                else
+//                {
+//                    imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//                }
+//            }
+//            else
+//                imgView.image=[UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//        }
+//        else
+//        {
+//            imgView.image = [UIImage imageNamed:@"defaultIconChat2@2x.png"];
+//        }
         
         CGSize labelSize = label.frame.size;
         [firstButton setFrame:CGRectMake(label.frame.origin.x, (label.frame.origin.y + labelSize.height), 73, 37)];
@@ -647,10 +768,66 @@
     
     if (!isForReminder)
     {
+        
         if([inResponseDic isKindOfClass:[NSArray class]])
         {
-            responseArray=[[NSMutableArray alloc]initWithArray:inResponseDic];
-        
+            //if (sectionForImage == kActiveUser)
+           // {
+                responseArray=[[NSMutableArray alloc]initWithArray:inResponseDic];
+            if (sectionForImage == kActiveUser)
+            {
+                for (int i = 0; i < [responseArray count]; i++)
+                {
+                    if ([activeJabberIdList count] > i)
+                        [idUserNameDic setObject:[(NSDictionary*)[responseArray objectAtIndex:i]objectForKey:@"id"] forKey:[activeJabberIdList objectAtIndex:i]];
+                }
+            }
+            if (sectionForImage == kRejectedUser)
+            {
+                for (int i = 0; i < [responseArray count]; i++)
+                {
+                    if ([rejectedList count] > i)
+                        [idUserNameDic setObject:[(NSDictionary*)[responseArray objectAtIndex:i]objectForKey:@"id"] forKey:[rejectedList objectAtIndex:i]];
+                }
+            }
+            if (sectionForImage == kBlockUser)
+            {
+                for (int i = 0; i < [responseArray count]; i++)
+                {
+                    if ([blockList count] > i)
+                        [idUserNameDic setObject:[(NSDictionary*)[responseArray objectAtIndex:i]objectForKey:@"id"] forKey:[blockList objectAtIndex:i]];
+                }
+            }
+            if (sectionForImage == kNewActiveuser)
+            {
+                for (int i = 0; i < [responseArray count]; i++)
+                {
+                    if ([activeLocalList count] > i)
+                        [idUserNameDic setObject:[(NSDictionary*)[responseArray objectAtIndex:i]objectForKey:@"id"] forKey:[activeLocalList objectAtIndex:i]];
+                }
+            }
+
+
+
+         //   }
+//            else if (sectionForImage == kBlockUser)
+//            {
+//                ReleaseObject(blockUserImageList);
+//                blockUserImageList = [[NSMutableArray alloc]initWithArray:inResponseDic];
+//                //// save block image dic list
+//            }
+//            else if (sectionForImage == kRejectedUser)
+//            {
+//                ReleaseObject(rejectedUserImageList);
+//                rejectedUserImageList = [[NSMutableArray alloc]initWithArray:inResponseDic];
+//                ///// save reject image dic list.
+//            }
+//            else if (sectionForImage == kNewActiveuser)
+//            {
+//                ReleaseObject(newActiveUserImageList);
+//                newActiveUserImageList = [[NSMutableArray alloc]initWithArray:inResponseDic];
+//            }
+//            
             [self performSelector:@selector(bringImages:) withObject:inResponseDic afterDelay:0];
         }
         else
@@ -702,6 +879,28 @@
         int index=[[[inResponseDic objectAtIndex:i] valueForKey:@"id"] integerValue];
             [self doFetchEditionImage:[[inResponseDic objectAtIndex:i] valueForKey:@"profile_pic_path"]withIndex:index];
     }
+    
+    if (sectionForImage == kActiveUser)
+    {
+        if ([blockList count] > 0)
+        {
+            sectionForImage = kBlockUser;
+            [self fetcheImagesFrom:blockList forSection:kBlockUser];
+        }
+    }
+    else if (sectionForImage == kBlockUser)
+    {
+        if ([rejectedList count] > 0)
+        {
+            sectionForImage = kRejectedUser;
+            [self fetcheImagesFrom:rejectedList forSection:kRejectedUser];
+        }
+    }
+    else if (sectionForImage == kRejectedUser)
+    {
+        sectionForImage = kNewActiveuser;
+        [self fetcheImagesFrom:activeLocalList forSection:kNewActiveuser];
+    }
 }
 
 -(void)doFetchEditionImage:(NSString *)inImageId withIndex:(NSInteger)index
@@ -737,40 +936,162 @@
     {
 //        NSLog(@"%d",inRequest.index);
         UIImage * img = [UIImage imageWithData: aImageData];
-        
-        switch (sectionForImage)
-        {
-            case kActiveUser:
-            {
-                if (img) {
-                    
-                    NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
-                    NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
-                        NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
-                        //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
-                        return [ID isEqualToString:cellIndex];
-                    }];
-                    //        NSLog(@"filteredIndexes %d",filteredIndexes);
-                    if (filteredIndexes != NSNotFound) {
-                        NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
-                        UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
-                        UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
-                        imageVw.image=img;
-                        
-                        NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
-                        aTemp=[messages objectAtIndex:filteredIndexes];
-                        //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
-                        [aTemp setObject:img forKey:@"Image"];
-                        [messages replaceObjectAtIndex:filteredIndexes withObject:aTemp];
-                    }
-                }
-                break;
+        NSString* ID ;
+        if (img) {
+            
+            NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+            NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+                NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+                //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+                return [ID isEqualToString:cellIndex];
+            }];
+            //        NSLog(@"filteredIndexes %d",filteredIndexes);
+            if (filteredIndexes != NSNotFound) {
+                NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
+                UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+                UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+                imageVw.image=img;
+                
+               // NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
+                [imageUserNameDic setObject:img forKey:cellIndex];
+                NSLog(@"%@", imageUserNameDic);
+//                if ([messages count] > filteredIndexes)
+//                {
+//                    aTemp=[messages objectAtIndex:filteredIndexes];
+//                    //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+//                    [aTemp setObject:img forKey:@"Image"];
+//                    [messages replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+//                }
             }
-            default:
-                break;
-        }
+
+//        
+//        switch (sectionForImage)
+//        {
+//            case kActiveUser:
+//            {
+//                if (img) {
+//                    
+//                    NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+//                    NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+//                        NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+//                        //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+//                        return [ID isEqualToString:cellIndex];
+//                    }];
+//                    //        NSLog(@"filteredIndexes %d",filteredIndexes);
+//                    if (filteredIndexes != NSNotFound) {
+//                        NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
+//                        UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+//                        UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+//                        imageVw.image=img;
+//                        
+//                        NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
+//                        if ([messages count] > filteredIndexes)
+//                        {
+//                            aTemp=[messages objectAtIndex:filteredIndexes];
+//                        //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+//                            [aTemp setObject:img forKey:@"Image"];
+//                            [messages replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+//                        }
+//                    }
+//                }
+//                break;
+//            }
+//            case kBlockUser:
+//            {
+//                if (img) {
+//
+//                NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+//                NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+//                    NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+//                    //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+//                    return [ID isEqualToString:cellIndex];
+//                }];
+//                //        NSLog(@"filteredIndexes %d",filteredIndexes);
+//                if (filteredIndexes != NSNotFound) {
+//                    NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:1];
+//                    UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+//                    UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+//                    imageVw.image=img;
+//                    
+//                    NSMutableDictionary *aTemp=[[NSMutableDictionary alloc] init];
+//                    
+//                    if ([blockUserImageList count] > filteredIndexes)
+//                    {
+//                        aTemp=[blockUserImageList objectAtIndex:filteredIndexes];
+//                    //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+//                        [aTemp setObject:img forKey:kProfilePicPath];
+//                        [blockUserImageList replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+//                    }
+//                }
+//                }
+//                break;
+//            }
+//            case kRejectedUser:
+//                {
+//                    if (img)
+//                    {
+//
+//                        NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+//                        NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+//                            NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+//                        //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+//                            return [ID isEqualToString:cellIndex];
+//                        }];
+//                    //        NSLog(@"filteredIndexes %d",filteredIndexes);
+//                        if (filteredIndexes != NSNotFound)
+//                        {
+//                            NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:2];
+//                            UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+//                            UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+//                            imageVw.image=img;
+//                        
+//                            NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
+//                            if ([rejectedUserImageList count] > filteredIndexes)
+//                            {
+//                                aTemp=[rejectedUserImageList objectAtIndex:filteredIndexes];
+//                        //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+//                                [aTemp setObject:img forKey:kProfilePicPath];
+//                                [rejectedUserImageList replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+//                            }
+//                        }
+//                    }
+//
+//                    break;
+//                }
+//                    case kNewActiveuser:
+//                    {
+//                        if (img) {
+//
+//                        NSString *cellIndex=[NSString stringWithFormat:@"%d",inRequest.index];
+//                        NSInteger filteredIndexes = [responseArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop){
+//                            NSString *ID =[NSString stringWithFormat:@"%@",[obj valueForKey:@"id"]];
+//                            //            NSLog(@"ID: %@",[obj valueForKey:@"id"]);
+//                            return [ID isEqualToString:cellIndex];
+//                        }];
+//                        //        NSLog(@"filteredIndexes %d",filteredIndexes);
+//                        if (filteredIndexes != NSNotFound) {
+//                            NSIndexPath *indexpath=[NSIndexPath indexPathForRow:filteredIndexes inSection:0];
+//                            UITableViewCell *cell=[self.tView cellForRowAtIndexPath:indexpath];
+//                            UIImageView *imageVw=(UIImageView *)[cell.contentView viewWithTag:11];
+//                            imageVw.image=img;
+//                            
+//                            NSMutableDictionary *aTemp=[[NSMutableDictionary alloc]init];
+//                            if ([newActiveUserImageList count] > filteredIndexes)
+//                            {
+//                                aTemp=[newActiveUserImageList objectAtIndex:filteredIndexes];
+//                            //            [[messages objectAtIndex:indexPath.row] valueForKey:@"Image"]
+//                                [aTemp setObject:img forKey:kProfilePicPath];
+//                                [newActiveUserImageList replaceObjectAtIndex:filteredIndexes withObject:aTemp];
+//                            }
+//                        }
+//
+//                    }
+//            default:
+//                break;
+//        }
     }
            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    }
 }
 
 #pragma mark - Private Methods
@@ -810,8 +1131,8 @@
     [userDefault setObject:dic1 forKey:key];
     [userDefault release];
     
-    NSLog(@"Array to update in list ----------------------------------- %@", arr);
-    NSLog(@"List to be updated----------------------------------------------- %@",key);
+   // NSLog(@"Array to update in list ----------------------------------- %@", arr);
+   // NSLog(@"List to be updated----------------------------------------------- %@",key);
 }
 
 
@@ -874,10 +1195,41 @@
 {
     ReleaseObject(blockList);
     blockList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kBlockList]];
+    if ([blockList count] > 0)
+    {
+        ReleaseObject(blockUserImageList);
+        blockUserImageList = [[NSMutableArray alloc] initWithArray:[self userNameDictionaryArrayFromArray:blockList]];
+    }
     ReleaseObject(rejectedList);
     rejectedList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kRejectList]];
+    
+    if ([rejectedList count] > 0)
+    {
+        ReleaseObject(rejectedUserImageList);
+        rejectedUserImageList = [[NSMutableArray alloc] initWithArray:[self userNameDictionaryArrayFromArray:rejectedList]];
+    }
     ReleaseObject(activeLocalList);
     activeLocalList = [[NSMutableArray alloc] initWithArray:[self arrayFromUserDefaultForKey:kActiveList]];
+    
+    if ([activeLocalList count] > 0)
+    {
+        ReleaseObject(newActiveUserImageList);
+        newActiveUserImageList = [[NSMutableArray alloc] initWithArray:[self userNameDictionaryArrayFromArray:activeLocalList]];
+    }
+}
+
+- (NSArray*) userNameDictionaryArrayFromArray:(NSArray*)objArray
+{
+    NSMutableArray* arr =[[NSMutableArray alloc] init];
+    for (int i = 0; i < [objArray count]; i++)
+    {
+        NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+        [dic setObject:[objArray objectAtIndex:i] forKey:@"UserName"];
+        [arr addObject:dic];
+        ReleaseObject(dic);
+    }
+    
+    return arr;
 }
 
 - (void) createList:(NSString*)list array:(NSArray*)array
@@ -916,8 +1268,8 @@
     NSString* userNameString = [userNameArray componentsJoinedByString:@","];
     sectionForImage = imageIndex;
     [self callWebService:userNameString];
-    [userNameArray release];
 }
+
 - (NSXMLElement*) elementWithJabber:(NSString*)jabberId order:(NSInteger) order
 {
     NSXMLElement* newElement = [XMPPPrivacy privacyItemWithType:@"jid" value:jabberId action:@"deny" order:order];

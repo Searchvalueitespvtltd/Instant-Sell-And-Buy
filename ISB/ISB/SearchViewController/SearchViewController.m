@@ -672,7 +672,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     //    NSString *strTemp;
     //    strTemp = [[arrItemCategory objectAtIndex:indexPath.row]valueForKey:@"id"];
      NSString *searchText = [srchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    itemView.strViewHeading  = [NSString stringWithFormat:@"%@",searchText];
+    itemView.strViewHeading  = (NSMutableString*)[NSString stringWithFormat:@"%@",searchText];
 //    itemView.strCategoryID = [[arrItemCategory objectAtIndex:indexPath.row]valueForKey:@"id"];
 //    itemView.strViewTitle = [[arrItemCategory objectAtIndex:indexPath.row]valueForKey:@"name"];
     [self saveToDatabase:searchText];

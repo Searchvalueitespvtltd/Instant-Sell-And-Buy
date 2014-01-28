@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 PARNEET CHUGH. All rights reserved.
 //
 
+#define kLiginFailedAlertMsg @"Please enter correct login credentials."
+
 #import "LoginViewController.h"
 #import "ForgotPasswordViewController.h"
 #import "RegistrationViewController.h"
@@ -143,8 +145,8 @@ else
 
     if([[inResponseDic valueForKey:@"id"]isEqualToString:@"0"])
     {
-//       [Utils showAlertView:kAlertTitle message:@"Wrong email or password" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [Utils showAlertView:kAlertTitle message:[inResponseDic valueForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+       [Utils showAlertView:kAlertTitle message:kLiginFailedAlertMsg delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+     //   [Utils showAlertView:kAlertTitle message:[inResponseDic valueForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     }
     else{
         [self setField:self.passwordTxtField forKey:kXMPPmyPassword1];

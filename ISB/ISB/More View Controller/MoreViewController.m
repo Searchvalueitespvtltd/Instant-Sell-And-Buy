@@ -123,6 +123,7 @@ titleForHeaderInSection:(NSInteger)section
 //            return @"Integrate your ISB";
 //            break;
         default:
+            return @"";
             break;
     }
 //    return [self.sortedKeys objectAtIndex:section];
@@ -153,6 +154,7 @@ titleForHeaderInSection:(NSInteger)section
 //            listData =[self.tableContents objectForKey:@"Integrate your ISB"];
 //            break;
         default:
+            listData = [NSArray arrayWithObject:@""];
             break;
     }
     
@@ -350,8 +352,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
             break;
     }
 
-    NSUInteger row = [indexPath row];
-    NSString *rowValue = [listData objectAtIndex:row];
+    //NSUInteger row = [indexPath row];
+  //  NSString *rowValue = [listData objectAtIndex:row];
     
 //    NSString *message = [[NSString alloc] initWithFormat:rowValue];
 //    UIAlertView *alert = [[UIAlertView alloc]

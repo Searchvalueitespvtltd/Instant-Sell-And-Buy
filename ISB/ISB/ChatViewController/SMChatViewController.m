@@ -16,8 +16,6 @@
 
 @interface SMChatViewController ()
 
-- (void) onLongPressGesture:(UILongPressGestureRecognizer*)gesture;
-
 @end
 
 @implementation SMChatViewController

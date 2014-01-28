@@ -489,7 +489,7 @@
     }
     
     
-    NSMutableArray *arr=[[NSMutableArray alloc]init];
+   // NSMutableArray *arr=[[NSMutableArray alloc]init];
     NSString *str=@"";
     for (int i=0; i<[postageArray count]; i++) {
         UIButton *button=(UIButton *)[self.view viewWithTag:51+i];

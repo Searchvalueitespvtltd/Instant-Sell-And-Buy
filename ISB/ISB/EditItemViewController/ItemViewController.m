@@ -630,6 +630,7 @@
     }
     else
     {
+        [buyItemBtn setUserInteractionEnabled:NO];
         [self callBuyService];
     }
    
@@ -1251,10 +1252,13 @@
     {
         if([[inResponseDic objectAtIndex:0] isKindOfClass:[NSDictionary class]])
         {
+            [buyItemBtn setAlpha:0.3];
+           // [buyItemBtn setUserInteractionEnabled:NO];
             [Utils showAlertView:kAlertTitle message:@"You have buy item successfully." delegate :self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         }
         else
         {
+            [buyItemBtn setUserInteractionEnabled:YES];
             [Utils showAlertView:kAlertTitle message:@"Error" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         }
     }
